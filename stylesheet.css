@@ -1,0 +1,106 @@
+html, button, input, select, textarea, 
+.pure-g [class *= "pure-u"] {
+	font-family: 'Quicksand', sans-serif;
+}
+#navbar {
+	font-size: 40px;
+	position: fixed;
+	background-color: rgba(159,159,159,0.75);
+}
+ul {
+	font-size: 25px;
+}
+.banner {
+	height: 760px;
+	background-repeat: no-repeat;
+	background-image: url('phillyskylineblur.jpg');
+	background-attachment: fixed;
+    background-position: 0 0; 
+    width: 100%;
+}
+#name {
+	position: fixed;
+	font-size: 40px;
+	color: white;
+	text-align: left;
+	padding-top: 5em;
+}
+.headshot {
+	position: fixed;
+	padding-top: 9em;
+	padding-left: 7em;
+}
+.content {
+	position: relative;
+}
+#projectstitle, #resumetitle, #contactstitle {
+	padding-top: 1em;
+	font-size: 50px;
+	text-align: center;
+	color: white;
+	height: 200px;
+	width: 100%;
+}
+#projectstitle {
+	background-image: url('banner1.jpg');
+	background-position: center right;
+}
+#projectsdescript, #resumedescript, #contactdescript{
+	background-color: #EEEEEE;
+	padding: 1.5em;
+	font-size: 40px;
+}
+#projectsdescript a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+#contactdescript a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+#projectsdescript a:hover, a:active{
+	text-decoration: none;
+	color: #666666;
+}
+#contactdescript a:hover, a:active {
+	text-decoration: none;
+	color: #666666;
+}
+#resumedescript a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+#resumedescript a:hover, a:active {
+	text-decoration: none;
+	color: #666666;
+}
+#resumetitle {
+	background-image: url('banner2.jpg');
+	background-position: bottom left;
+}
+#pennappsinfo, #dpinfo, #pennsustainsinfo {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#pennapps, #dp, #pennsustains {
+	padding-top: 2em;
+}
+#contactstitle {
+	background-image: url('banner3.jpg');
+}
+#contactdescript {
+	padding: 2em;
+}
+#socialmedia {
+	font-size: 40px;
+	color: white;
+	padding-top: 260px;
+	padding-left: 2em;
+	padding-bottom: 0em;
+}
+#endbanner {
+	background-image: url('endbanner.jpg');
+	background-position: center left;
+	height: 400px;
+	width: 100%;
+}
