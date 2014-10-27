@@ -52,7 +52,6 @@ ul {
 	background-color: #EEEEEE;
 	padding: 1.5em;
 	font-size: 35px;
-	width: 100%;
 }
 #projectsdescript a:link, a:visited {
 	text-decoration: none;
@@ -93,9 +92,6 @@ ul {
 #contactstitle {
 	background-image: url('https://cloud.githubusercontent.com/assets/8826297/4554869/dd8695d0-4eb5-11e4-8794-010323c25e64.jpg');
 	background-size: cover;
-}
-#contactdescript {
-	padding: 2em;
 }
 #socialmedia {
 	font-size: 40px;
