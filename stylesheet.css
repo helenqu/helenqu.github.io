@@ -52,6 +52,7 @@ ul {
 	background-color: #EEEEEE;
 	padding: 1.5em;
 	font-size: 35px;
+	width: 100%;
 }
 #projectsdescript a:link, a:visited {
 	text-decoration: none;
