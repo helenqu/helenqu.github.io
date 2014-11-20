@@ -11,7 +11,7 @@ ul {
 	font-size: 25px;
 }
 .banner {
-	height: 760px;
+	height: 100vh;
 	background-repeat: no-repeat;
 	background-image: url('https://cloud.githubusercontent.com/assets/8826297/4554875/dd98851a-4eb5-11e4-8889-db4ce1c5c9f8.jpg');
 	background-attachment: fixed;
@@ -21,10 +21,11 @@ ul {
 }
 #name {
 	position: fixed;
-	font-size: 40px;
+	font-size: 38px;
 	color: white;
 	text-align: left;
-	padding-top: 4em;
+	padding-top: 3em;
+	padding-right: 1em;
 }
 .headshot {
 	position: fixed;
@@ -35,11 +36,11 @@ ul {
 	position: relative;
 }
 #projectstitle, #resumetitle, #contactstitle {
-	padding-top: 1em;
+	padding-top: 2em;
 	font-size: 50px;
 	text-align: center;
 	color: white;
-	height: 200px;
+	height: 40vh;
 	width: 100%;
 }
 #projectstitle {
@@ -96,14 +97,14 @@ ul {
 #socialmedia {
 	font-size: 40px;
 	color: white;
-	padding-top: 260px;
+	padding-top: 300px;
 	padding-left: 2em;
 	padding-bottom: 0em;
 }
 #endbanner {
 	background-image: url('https://cloud.githubusercontent.com/assets/8826297/4554873/dd91c996-4eb5-11e4-8c94-8ef98f024756.jpg');
 	background-position: center left;
-	height: 400px;
+	height: 60vh;
 	width: 100%;
 	background-size: cover;
 }
