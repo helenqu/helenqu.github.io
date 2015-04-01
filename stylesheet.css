@@ -1,4 +1,38 @@
-html, button, input, select, textarea, 
+html, body {
+	background-color: #F4F4F4;
+}
+
+#container {
+	font-family: 'Josefin Slab', serif;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 10%;
+}
+
+#name {
+	float: right;
+	color: #5ECFB8;
+	font-size: 100px;
+	font-weight: 100;
+	line-height: 80%;
+}
+
+#desc {
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	margin-top: 8%;
+	margin-right: 15%;
+	float: left;
+	color: #5C5C5C;
+	font-size: 30px;
+	font-weight: 100;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+/*html, button, input, select, textarea, 
 .pure-g [class *= "pure-u"] {
 	font-family: 'Quicksand', sans-serif;
 }
@@ -12,9 +46,10 @@ ul {
 }
 .banner {
 	height: 100vh;
+	background-color: #EEEEEE;
 	background-repeat: no-repeat;
-	background-image: url('https://cloud.githubusercontent.com/assets/8826297/4554875/dd98851a-4eb5-11e4-8889-db4ce1c5c9f8.jpg');
-	background-attachment: fixed;
+	/*background-image: url('https://cloud.githubusercontent.com/assets/8826297/4554875/dd98851a-4eb5-11e4-8889-db4ce1c5c9f8.jpg');*/
+	/*background-attachment: fixed;
     background-position: 0 0; 
     background-size: cover;
     width: 100%;
@@ -22,7 +57,7 @@ ul {
 #name {
 	position: fixed;
 	font-size: 38px;
-	color: white;
+	color: black;
 	text-align: left;
 	padding-top: 3em;
 	padding-right: 1em;
@@ -31,6 +66,8 @@ ul {
 	position: fixed;
 	padding-top: 9em;
 	padding-left: 7em;
+	width: 400px;
+	height: 400px;
 }
 .content {
 	position: relative;
@@ -90,6 +127,10 @@ ul {
 #pennapps, #dp, #pennsustains {
 	padding-top: 2em;
 }
+#pennappspic, #dppic, #pennsustainspic {
+	width: 230px;
+	height: 230px;
+}
 #contactstitle {
 	background-image: url('https://cloud.githubusercontent.com/assets/8826297/4554869/dd8695d0-4eb5-11e4-8794-010323c25e64.jpg');
 	background-size: cover;
@@ -108,3 +149,24 @@ ul {
 	width: 100%;
 	background-size: cover;
 }
+@media screen and (max-width: 400px) {
+	#projectstitle, #resumetitle, #contactstitle {
+		font-size: 35px;
+		height: 25px;
+		padding-top: 10vh;
+	}
+	#socialmedia {
+		font-size: 25px;
+		padding-top: 100px;
+	}
+	#projectsdescript, #resumedescript, #contactdescript {
+		font-size: 20px;
+	}
+	#name {
+		font-size: 25px;
+	}
+	#navbar {
+		font-size: 25px;
+	}
+
+}*/
