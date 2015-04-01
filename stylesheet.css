@@ -10,6 +10,8 @@ html, body {
 }
 
 #name {
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
 	float: right;
 	color: #5ECFB8;
 	font-size: 100px;
@@ -18,8 +20,6 @@ html, body {
 }
 
 #desc {
-	-webkit-animation-delay: 0.5s;
-	-moz-animation-delay: 0.5s;
 	margin-top: 8%;
 	margin-right: 15%;
 	float: left;
