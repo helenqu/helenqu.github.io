@@ -50,7 +50,7 @@ header_includes: "
 </figure>
 
 
-I am a third year PhD candidate in Physics at the [University of Pennsylvania][pennphysics], advised by [Masao Sako][masao]. I work with type Ia supernovae as cosmological probes as part of the [Dark Energy Survey Collaboration][des] as well as the [Nancy Grace Roman Space Telescope][ngrst] supernova science investigation team. I am particularly interested in applications of machine learning and other modern data science techniques to large-scale astronomical survey data.
+I am a third year PhD candidate in Physics at the [University of Pennsylvania][pennphysics], advised by [Dr. Masao Sako][masao]. I work with type Ia supernovae as cosmological probes as part of the [Dark Energy Survey Collaboration][des] as well as the [Nancy Grace Roman Space Telescope][ngrst] supernova science investigation team. I am particularly interested in applications of machine learning and other modern data science techniques to large-scale astronomical survey data.
 
 [pennphysics]: https://www.physics.upenn.edu/
 [masao]: https://www.physics.upenn.edu/people/standing-faculty/masao-sako
