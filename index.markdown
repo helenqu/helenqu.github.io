@@ -58,26 +58,50 @@ I am a third year PhD candidate in Physics at the [University of Pennsylvania][p
 [ngrst]: https://roman.gsfc.nasa.gov/index.html
 
 ## Publications
-[The Pantheon+ Analysis: SuperCal-Fragilistic Cross Calibration, Retrained SALT2 Light Curve Model, and Calibration Systematic Uncertainty][pantheon]\
-Dillon Brout, Georgie Taylor, Dan Scolnic, ..., **Helen Qu**, et al.
-
 [Photometric Classification of Early-Time Supernova Lightcurves with SCONE][scone_early]\
 **Helen Qu**, Masao Sako
-
-[A Reference Survey for Supernova Cosmology with the Nancy Grace Roman Space Telescope][roman_reference]\
-Benjamin M. Rose, Charles Baltay, Rebekah Hounsell, ..., **Helen Qu**, et al.
 
 [SCONE: Supernova Classification with a Convolutional Neural Network][scone]\
 **Helen Qu**, Masao Sako, Anais Möller, Cyrille Doux
 
+[There's no difference: Convolutional Neural Networks for transient detection without template subtraction][DIA]\
+Tatiana Acero-Cuellar, Federica Bianco, Greg Dobler, Masao Sako, **Helen Qu**
+
+[The Pantheon+ Analysis: Cosmological Constraints][pantheon]\
+Dillon Brout, Dan Scolnic, Brodie Popovic, ..., **Helen Qu**, et al.
+
+[The Pantheon+ Analysis: SuperCal-Fragilistic Cross Calibration, Retrained SALT2 Light Curve Model, and Calibration Systematic Uncertainty][pantheon_calibration]\
+Dillon Brout, Georgie Taylor, Dan Scolnic, ..., **Helen Qu**, et al.
+
+[A Reference Survey for Supernova Cosmology with the Nancy Grace Roman Space Telescope][roman_reference]\
+Benjamin M. Rose, Charles Baltay, Rebekah Hounsell, ..., **Helen Qu**, et al.
+
 [Synergies between Vera C. Rubin Observatory, Nancy Grace Roman Space Telescope, and Euclid Mission: Constraining Dark Energy with Type Ia Supernovae][roman_synergies]\
 Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu**
 
-[pantheon]: https://arxiv.org/abs/2112.03864
+[pantheon]: https://arxiv.org/abs/2202.04077
+[pantheon_calibration]: https://arxiv.org/abs/2112.03864
 [scone_early]: https://arxiv.org/abs/2111.05539
 [roman_reference]: https://arxiv.org/abs/2111.03081
 [scone]: https://arxiv.org/abs/2106.04370
 [roman_synergies]: https://arxiv.org/abs/2104.01199
+[DIA]: https://arxiv.org/abs/2203.07390
+
+## Upcoming & Past Talks
+**Classifying Supernova Time-Series Photometry with Convolutional Neural Networks**\
+International Conference on Machine Learning for Astrophysics (1 June 2022)
+
+**Building the Toolbox for Type Ia Supernova Cosmology**\
+Invited Seminar Talk, University of Delaware (8 March 2022)
+
+[**Photometric Supernova Classification in the Roman Era**][roman_2022_youtube]\
+Roman Time Domain Conference (8 February 2022)
+
+[**SN Ia Cosmology and Core-Collapse Science with the Roman Space Telescope**][AAS_2022_youtube]\
+American Astronomical Society meeting (27 January 2022)
+
+[roman_2022_youtube]: https://www.youtube.com/watch?v=wJHu0KJfSvU&list=PL460A0YI_JsAVIE-llqdGM7plKF1QbQxk&index=9
+[AAS_2022_youtube]: https://youtu.be/yCS4IMfq9Pk?t=3940
 
 ## Misc.
 
