@@ -43,21 +43,30 @@ header_includes: "
   <span class="marginnote">
     <a href="https://www.linkedin.com/in/helen-qu/">LinkedIn</a>
   </span>
+  <span class="marginnote">
+    <a href="https://github.com/helenqu">Github</a>
+  </span>
+  <span class="marginnote">
+    <a href="https://twitter.com/_helenqu">Twitter</a>
+  </span>
 </p>
 
 <figure>
-    <img src="photo.jpg" alt="broken photo :(">
+    <img src="photo.jpg" alt="photo of Helen Qu">
 </figure>
 
-
-I am a fourth year PhD candidate in Physics at the [University of Pennsylvania][pennphysics], advised by [Dr. Masao Sako][masao]. I work on machine learning applications to cosmology, specifically with type Ia supernovae as cosmological probes. I am part of the [Dark Energy Survey Collaboration][des] as well as the [Nancy Grace Roman Space Telescope][ngrst] supernova science investigation team. I am particularly interested in developing deep learning methods with large-scale astronomical survey data applications in mind.
+I am a final year PhD candidate in Physics at the [University of Pennsylvania][pennphysics], advised by [Dr. Masao Sako][masao]. I work on machine learning applications to cosmology, specifically with type Ia supernovae as cosmological probes. I am part of the [Dark Energy Survey Collaboration][des] as well as the [Nancy Grace Roman Space Telescope][ngrst] supernova science investigation team. I am particularly interested in developing deep learning methods with large-scale astronomical survey data applications in mind.
 
 [pennphysics]: https://www.physics.upenn.edu/
 [masao]: https://www.physics.upenn.edu/people/standing-faculty/masao-sako
 [des]: https://www.darkenergysurvey.org/
 [ngrst]: https://roman.gsfc.nasa.gov/index.html
 
-## Publications
+## Selected Publications
+[Photo-zSNthesis: Converting Type Ia Supernova Lightcurves to Redshift Estimates via Deep Learning][photo-z]\
+*Astrophysical Journal, in review*\
+**Helen Qu**, Masao Sako
+
 [A Convolutional Neural Network Approach to Supernova Time-Series
 Classification][scone_icml]\
 *International Conference on Machine Learning (ICML) 2022 Workshop on Machine Learning for Astrophysics*\
@@ -91,7 +100,8 @@ Benjamin M. Rose, Charles Baltay, Rebekah Hounsell, ..., **Helen Qu**, et al.
 *arXiv, 2021*\
 Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu**
 
-[scone_icml]: https://arxiv.org/pdf/2207.09440.pdf
+[photo-z]: https://arxiv.org/abs/2305.11869
+[scone_icml]: https://arxiv.org/abs/2207.09440
 [pantheon]: https://arxiv.org/abs/2202.04077
 [pantheon_calibration]: https://arxiv.org/abs/2112.03864
 [scone_early]: https://arxiv.org/abs/2111.05539
@@ -101,21 +111,25 @@ Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu**
 [DIA]: https://arxiv.org/abs/2203.07390
 
 ## Selected Talks
-**A Convolutional Neural Network Approach to Supernova Time-Series Classification**\
-[Rising Stars in Data Science][rising_stars] (15 November 2022)
+**Enabling Time Domain Science: From CNNs to Foundation Models**\
+Flatiron Institute ML x Astrophysics Symposium (May 2023)
 
-**Classifying Supernova Time-Series Photometry with Convolutional Neural Networks**\
-International Conference on Machine Learning for Astrophysics (1 June 2022)
+**A Convolutional Neural Network Approach to Supernova Time-Series Classification**\
+[Rising Stars in Data Science][rising_stars] (November 2022)
+
+[**A Convolutional Neural Network Approach to Supernova Time-Series Classification**][lsst_bdl]\
+LSST Bayesian Deep Learning Workshop (June 2022)
 
 **Building the Toolbox for Type Ia Supernova Cosmology**\
-Invited Seminar Talk, University of Delaware (8 March 2022)
+Invited Seminar Talk, University of Delaware (March 2022)
 
 [**Photometric Supernova Classification in the Roman Era**][roman_2022_youtube]\
-Roman Time Domain Conference (8 February 2022)
+Roman Time Domain Conference (February 2022)
 
 [**SN Ia Cosmology and Core-Collapse Science with the Roman Space Telescope**][AAS_2022_youtube]\
-American Astronomical Society meeting (27 January 2022)
+American Astronomical Society meeting (January 2022)
 
+[lsst_bdl]: https://www.youtube.com/watch?v=nkPLOgj9m3I&list=PLywBH0_7tBJ9BG2nKodRdn6ReDaW075gM&index=10
 [rising_stars]: https://datascience.uchicago.edu/rising-stars/#description-2
 [roman_2022_youtube]: https://www.youtube.com/watch?v=wJHu0KJfSvU&list=PL460A0YI_JsAVIE-llqdGM7plKF1QbQxk&index=9
 [AAS_2022_youtube]: https://youtu.be/yCS4IMfq9Pk?t=3940
