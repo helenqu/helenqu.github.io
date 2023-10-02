@@ -63,8 +63,12 @@ I am a final year PhD candidate in Physics at the [University of Pennsylvania][p
 [ngrst]: https://roman.gsfc.nasa.gov/index.html
 
 ## Selected Publications
-[Photo-zSNthesis: Converting Type Ia Supernova Lightcurves to Redshift Estimates via Deep Learning][photo-z]\
+[The Dark Energy Survey Supernova Program: Cosmological Biases from Host Galaxy Mismatch of Type Ia Supernovae][host_mismatch]\
 *Astrophysical Journal, in review*\
+**Helen Qu**, Masao Sako, Maria Vincenzi, et al. + DES Collaboration
+
+[Photo-zSNthesis: Converting Type Ia Supernova Lightcurves to Redshift Estimates via Deep Learning][photo-z]\
+*Astrophysical Journal, 2023*\
 **Helen Qu**, Masao Sako
 
 [A Convolutional Neural Network Approach to Supernova Time-Series
@@ -100,6 +104,7 @@ Benjamin M. Rose, Charles Baltay, Rebekah Hounsell, ..., **Helen Qu**, et al.
 *arXiv, 2021*\
 Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu**
 
+[host_mismatch]: https://arxiv.org/abs/2307.13696
 [photo-z]: https://arxiv.org/abs/2305.11869
 [scone_icml]: https://arxiv.org/abs/2207.09440
 [pantheon]: https://arxiv.org/abs/2202.04077
