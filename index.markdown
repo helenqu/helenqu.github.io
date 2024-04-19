@@ -121,14 +121,11 @@ Dillon Brout, Dan Scolnic, Brodie Popovic, ..., **Helen Qu**, et al.
 <!-- *arXiv, 2021*\ -->
 <!-- Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu** -->
 
-<<<<<<< HEAD
 [connect_later]: https://arxiv.org/abs/2402.03325
 [SOP]: https://arxiv.org/abs/2310.16316
 [des5yr]: https://arxiv.org/abs/2401.02929
 [transformers]: https://arxiv.org/abs/2310.12069
-=======
 [host_mismatch]: https://arxiv.org/abs/2307.13696
->>>>>>> 874102fdd79541481270e0784dc7994c81418610
 [photo-z]: https://arxiv.org/abs/2305.11869
 [scone_icml]: https://arxiv.org/abs/2207.09440
 [pantheon]: https://arxiv.org/abs/2202.04077
