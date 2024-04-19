@@ -55,21 +55,26 @@ header_includes: "
     <img src="photo.jpg" alt="photo of Helen Qu">
 </figure>
 
-I am a final year PhD candidate in Physics at the [University of Pennsylvania][pennphysics], advised by [Dr. Masao Sako][masao]. I work on machine learning applications to cosmology, specifically with type Ia supernovae as cosmological probes. I am part of the [Dark Energy Survey Collaboration][des] as well as the [Nancy Grace Roman Space Telescope][ngrst] supernova science investigation team. I am particularly interested in developing deep learning methods with large-scale astronomical survey data applications in mind.
+I am an incoming research fellow at the [Flatiron Institute](flatiron). Previously, I completed my PhD in 2024 at the [University of Pennsylvania][pennphysics], advised by [Dr. Masao Sako][masao]. I work on robust machine learning and its applications to cosmology, specifically with type Ia supernovae as cosmological probes. I am part of the [Dark Energy Survey Collaboration][des] as well as the [Nancy Grace Roman Space Telescope][ngrst] supernova science investigation team. I am particularly interested in developing deep learning methods with large-scale astronomical survey data applications in mind.
 
+[flatiron]: https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/
 [pennphysics]: https://www.physics.upenn.edu/
 [masao]: https://www.physics.upenn.edu/people/standing-faculty/masao-sako
 [des]: https://www.darkenergysurvey.org/
 [ngrst]: https://roman.gsfc.nasa.gov/index.html
 
 ## Selected Publications
+[Connect Later: Improving Fine-tuning for Robustness with Targeted Augmentations][connect_later]\
+*NeurIPS 2023 Workshop on Distribution Shifts*\
+**Helen Qu**, Sang Michael Xie
+
 [Photo-zSNthesis: Converting Type Ia Supernova Lightcurves to Redshift Estimates via Deep Learning][photo-z]\
-*Astrophysical Journal, in review*\
+*Astrophysical Journal, 2024*\
 **Helen Qu**, Masao Sako
 
 [A Convolutional Neural Network Approach to Supernova Time-Series
 Classification][scone_icml]\
-*International Conference on Machine Learning (ICML) 2022 Workshop on Machine Learning for Astrophysics*\
+*ICML 2022 Workshop on Machine Learning for Astrophysics*\
 **Helen Qu**, Masao Sako, Anais Möller, Cyrille Doux
 
 [Photometric Classification of Early-Time Supernova Lightcurves with SCONE][scone_early]\
@@ -80,26 +85,42 @@ Classification][scone_icml]\
 *Astronomical Journal, 2021*\
 **Helen Qu**, Masao Sako, Anais Möller, Cyrille Doux
 
-[There's no difference: Convolutional Neural Networks for transient detection without template subtraction][DIA]\
-*arXiv, 2022*\
+[Sum-of-Parts Models: Faithful Attributions for Groups of Features][SOP]\
+*NeurIPS 2023 Workshop on Explainable AI in Action (XAIA)*\
+Weiqiu You, **Helen Qu**, Marco Gatti, Bhuvnesh Jain, Eric Wong
+
+[The Dark Energy Survey: Cosmology Results With~ 1500 New High-redshift Type Ia Supernovae Using The Full 5-year Dataset][des5yr]\
+*Astrophysical Journal, 2024*\
+The Dark Energy Survey Collaboration (incl. **Helen Qu**)
+
+[Transformers for scientific data: a pedagogical review for astronomers][transformers]\
+*arXiv, 2023*\
+Dimitrios Tanoglidis, Bhuvnesh Jain, **Helen Qu**
+
+[What’s the Difference? The Potential for Convolutional Neural Networks for Transient Detection without Template Subtraction][DIA]\
+*Astronomical Journal, 2023*\
 Tatiana Acero-Cuellar, Federica Bianco, Greg Dobler, Masao Sako, **Helen Qu**
 
 [The Pantheon+ Analysis: Cosmological Constraints][pantheon]\
 *Astrophysical Journal, 2022*\
 Dillon Brout, Dan Scolnic, Brodie Popovic, ..., **Helen Qu**, et al.
 
-[The Pantheon+ Analysis: SuperCal-Fragilistic Cross Calibration, Retrained SALT2 Light Curve Model, and Calibration Systematic Uncertainty][pantheon_calibration]\
-*Astrophysical Journal, 2022*\
-Dillon Brout, Georgie Taylor, Dan Scolnic, ..., **Helen Qu**, et al.
+<!-- [The Pantheon+ Analysis: SuperCal-Fragilistic Cross Calibration, Retrained SALT2 Light Curve Model, and Calibration Systematic Uncertainty][pantheon_calibration]\ -->
+<!-- *Astrophysical Journal, 2022*\ -->
+<!-- Dillon Brout, Georgie Taylor, Dan Scolnic, ..., **Helen Qu**, et al. -->
 
-[A Reference Survey for Supernova Cosmology with the Nancy Grace Roman Space Telescope][roman_reference]\
-*arXiv, 2021*\
-Benjamin M. Rose, Charles Baltay, Rebekah Hounsell, ..., **Helen Qu**, et al.
+<!-- [A Reference Survey for Supernova Cosmology with the Nancy Grace Roman Space Telescope][roman_reference]\ -->
+<!-- *arXiv, 2021*\ -->
+<!-- Benjamin M. Rose, Charles Baltay, Rebekah Hounsell, ..., **Helen Qu**, et al. -->
 
-[Synergies between Vera C. Rubin Observatory, Nancy Grace Roman Space Telescope, and Euclid Mission: Constraining Dark Energy with Type Ia Supernovae][roman_synergies]\
-*arXiv, 2021*\
-Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu**
+<!-- [Synergies between Vera C. Rubin Observatory, Nancy Grace Roman Space Telescope, and Euclid Mission: Constraining Dark Energy with Type Ia Supernovae][roman_synergies]\ -->
+<!-- *arXiv, 2021*\ -->
+<!-- Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu** -->
 
+[connect_later]: https://arxiv.org/abs/2402.03325
+[SOP]: https://arxiv.org/abs/2310.16316
+[des5yr]: https://arxiv.org/abs/2401.02929
+[transformers]: https://arxiv.org/abs/2310.12069
 [photo-z]: https://arxiv.org/abs/2305.11869
 [scone_icml]: https://arxiv.org/abs/2207.09440
 [pantheon]: https://arxiv.org/abs/2202.04077
