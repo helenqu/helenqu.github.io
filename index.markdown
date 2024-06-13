@@ -55,8 +55,9 @@ header_includes: "
     <img src="photo.jpg" alt="photo of Helen Qu">
 </figure>
 
-I am an incoming research fellow at the [Flatiron Institute](flatiron). Previously, I completed my PhD in 2024 at the [University of Pennsylvania][pennphysics], advised by [Dr. Masao Sako][masao]. I work on robust machine learning and its applications to cosmology, specifically with type Ia supernovae as cosmological probes. I am part of the [Dark Energy Survey Collaboration][des] as well as the [Nancy Grace Roman Space Telescope][ngrst] supernova science investigation team. I am particularly interested in developing deep learning methods with large-scale astronomical survey data applications in mind.
+I am an incoming research fellow at the [Flatiron Institute](flatiron). Previously, I [completed my PhD in 2024][thesis] at the [University of Pennsylvania][pennphysics], advised by [Dr. Masao Sako][masao]. I work on robust machine learning and its applications to cosmology and time domain astrophysics. I am particularly interested in developing deep learning methods with large-scale astronomical survey data applications in mind.
 
+[thesis]: https://arxiv.org/abs/2406.04529
 [flatiron]: https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/
 [pennphysics]: https://www.physics.upenn.edu/
 [masao]: https://www.physics.upenn.edu/people/standing-faculty/masao-sako
@@ -65,7 +66,7 @@ I am an incoming research fellow at the [Flatiron Institute](flatiron). Previous
 
 ## Selected Publications
 [Connect Later: Improving Fine-tuning for Robustness with Targeted Augmentations][connect_later]\
-*NeurIPS 2023 Workshop on Distribution Shifts*\
+*International Conference on Machine Learning, 2024*\
 **Helen Qu**, Sang Michael Xie
 
 [The Dark Energy Survey Supernova Program: Cosmological Biases from Host Galaxy Mismatch of Type Ia Supernovae][host_mismatch]\
