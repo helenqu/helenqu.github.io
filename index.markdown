@@ -4,7 +4,7 @@
 
 layout: index
 title: Helen Qu
-subtitle: helenqu [at] sas.upenn.edu
+subtitle: hqu [at] flatironinstitute.org
 header_includes: "
   <script async src='https://www.googletagmanager.com/gtag/js?id=G-5NKVF9C40E'></script>
   <script>
@@ -55,16 +55,18 @@ header_includes: "
     <img src="photo.jpg" alt="photo of Helen Qu">
 </figure>
 
-I am an incoming research fellow at the [Flatiron Institute](flatiron). Previously, I [completed my PhD in 2024][thesis] at the [University of Pennsylvania][pennphysics], advised by [Dr. Masao Sako][masao]. I work on robust machine learning and its applications to cosmology and time domain astrophysics. I am particularly interested in developing deep learning methods with large-scale astronomical survey data applications in mind.
+I am a research fellow at the [Flatiron Institute](flatiron) broadly interested in robust machine learning, multimodal models, and AI for science. Previously, I [completed a PhD in physics][thesis] at the [University of Pennsylvania][pennphysics], where I worked on machine learning methods for type Ia supernova cosmology with [Prof. Masao Sako][masao].
 
 [thesis]: https://arxiv.org/abs/2406.04529
 [flatiron]: https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/
 [pennphysics]: https://www.physics.upenn.edu/
 [masao]: https://www.physics.upenn.edu/people/standing-faculty/masao-sako
-[des]: https://www.darkenergysurvey.org/
-[ngrst]: https://roman.gsfc.nasa.gov/index.html
 
 ## Selected Publications
+[Impact of Pretraining Word Co-occurrence on Compositional Generalization in Multimodal Models][clip]\
+*preprint, 2025*\
+**Helen Qu**, Sang Michael Xie
+
 [Connect Later: Improving Fine-tuning for Robustness with Targeted Augmentations][connect_later]\
 *International Conference on Machine Learning, 2024*\
 **Helen Qu**, Sang Michael Xie
@@ -122,6 +124,7 @@ Dillon Brout, Dan Scolnic, Brodie Popovic, ..., **Helen Qu**, et al.
 <!-- *arXiv, 2021*\ -->
 <!-- Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu** -->
 
+[clip]: https://arxiv.org/abs/2507.08000
 [connect_later]: https://arxiv.org/abs/2402.03325
 [SOP]: https://arxiv.org/abs/2310.16316
 [des5yr]: https://arxiv.org/abs/2401.02929
