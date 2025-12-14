@@ -1,0 +1,22 @@
+{% if page.math %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/contrib/auto-render.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script> -->
+  <script>
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\[", right: "\\]", display: true},
+        {left: "\\(", right: "\\)", display: false}
+      ],
+      macros: {
+        "\\R": "\\mathbb{R}",
+        "\\E": "\\mathbb{E}",
+        // "\\Var": "\\operatorname{Var}",
+        // "\\norm": ["\\lVert #1 \\rVert", 1],
+        // "\\inner": ["\\langle #1, #2 \\rangle", 2]
+      }
+    });
+  </script>
+{% endif %}
