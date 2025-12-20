@@ -1,9 +1,9 @@
 {% if page.math %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/contrib/auto-render.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/contrib/auto-render.min.js"></script> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script> -->
-  <script>
+  <!-- <script>
     renderMathInElement(document.body, {
       delimiters: [
         {left: "$$", right: "$$", display: true},
@@ -17,6 +17,18 @@
         // "\\norm": ["\\lVert #1 \\rVert", 1],
         // "\\inner": ["\\langle #1, #2 \\rangle", 2]
       }
-    });
-  </script>
+    }); -->
+  <!-- </script> -->
+    <script>
+        window.MathJax = {
+            loader: {load: ['[tex]/mathtools']},
+            tex: {
+                packages: {'[+]': ['mathtools']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                tags: 'ams'
+            },
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 {% endif %}
