@@ -38,6 +38,12 @@ header_includes: "
   <!--   <a href="404.html">CV</a> -->
   <!-- </span> -->
   <span class="marginnote">
+    <a href="https://helenqu.com/blog/posts">AI Blog</a>
+  </span>
+  <span class="marginnote">
+    <a href="https://sphericalcowselectricsheep.substack.com/">Substack</a>
+  </span>
+  <span class="marginnote">
     <a href="https://scholar.google.com/citations?user=FWPJDb4AAAAJ&hl=en#">Google Scholar</a>
   </span>
   <span class="marginnote">
@@ -55,7 +61,9 @@ header_includes: "
     <img src="photo.jpg" alt="photo of Helen Qu">
 </figure>
 
-I am a research fellow at the [Flatiron Institute](flatiron) broadly interested in robust machine learning, multimodal models, and AI for science. Previously, I [completed a PhD in physics][thesis] at the [University of Pennsylvania][pennphysics], where I worked on machine learning methods for type Ia supernova cosmology with [Prof. Masao Sako][masao].
+I am a research fellow at the [Flatiron Institute](flatiron) broadly interested in reinforcement learning, robustness, multimodal models, and AI for science. Previously, I [completed a PhD in physics][thesis] at the [University of Pennsylvania][pennphysics], where I worked on machine learning methods for type Ia supernova cosmology with [Prof. Masao Sako][masao].
+
+Recently I've been excited about maintaining a [blog](https://helenqu.com/blog/) where I write about fun topics in ML/AI, as well as a personal [Substack](https://sphericalcowselectricsheep.substack.com/) where I write more generally about my thoughts.
 
 [thesis]: https://arxiv.org/abs/2406.04529
 [flatiron]: https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/
@@ -174,3 +182,5 @@ Outside of research, I love to bake and eat and occasionally make [music][soundc
 [iorg]: https://www.facebook.com/connectivity/
 [yahoo]: https://www.yahoo.com/
 [soundcloud]: https://soundcloud.com/user-192655172-704851799
+
+<a target="_blank" href="https://icons8.com/icon/VfF2Y9O8yus4/milky-way">Galaxy</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
