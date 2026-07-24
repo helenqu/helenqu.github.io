@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Sandbox for Multi-Agent Scientific Research Societies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FCFCF9;
+    --ink:#1C2733;
+    --ink-soft:#4A5560;
+    --rule:#D8DAD2;
+    --blue:#2B5DA8;
+    --blue-soft:#E8EEF7;
+    --amber:#B57420;
+    --amber-soft:#F7EEDD;
+    --red:#A8433C;
+    --red-soft:#F6E7E5;
+    --green:#3E7C50;
+    --green-soft:#E7F0E9;
+    --gray:#7C826F;
+    --gray-soft:#EEEFE8;
+    --serif:'STIX Two Text', Georgia, serif;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    max-width:880px;
+    margin:0 auto;
+    padding:64px 40px 96px;
+  }
+  /* ---------- masthead ---------- */
+  .masthead{
+    border-bottom:2px solid var(--ink);
+    padding-bottom:28px;
+    margin-bottom:44px;
+  }
+  .doc-line{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:26px;
+  }
+  h1{
+    font-size:clamp(30px,4.4vw,42px);
+    font-weight:600;
+    line-height:1.16;
+    letter-spacing:-.01em;
+    max-width:24ch;
+  }
+  .subtitle{
+    margin-top:14px;
+    font-size:19px;
+    font-style:italic;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+  .abstract{
+    margin-top:26px;
+    padding:18px 22px;
+    background:var(--blue-soft);
+    border-left:3px solid var(--blue);
+    font-size:15.5px;
+    line-height:1.6;
+    max-width:70ch;
+  }
+  .abstract b{font-weight:600;}
+  /* ---------- sections ---------- */
+  section{margin-bottom:56px;}
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:8px;
+  }
+  .sec-num{
+    font-family:var(--mono);
+    font-size:13px;
+    font-weight:600;
+    color:var(--blue);
+    letter-spacing:.05em;
+  }
+  h2{
+    font-size:25px;
+    font-weight:600;
+    letter-spacing:-.005em;
+  }
+  h3{
+    font-size:18px;
+    font-weight:600;
+    margin:30px 0 8px;
+  }
+  h3 .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.08em;
+    color:var(--blue);
+    margin-right:10px;
+    vertical-align:2px;
+  }
+  p{max-width:72ch;margin-bottom:14px;}
+  p b{font-weight:600;}
+  em{font-style:italic;}
+  a{color:var(--blue);text-decoration-color:rgba(43,93,168,.4);text-underline-offset:2px;}
+  a:hover{text-decoration-color:var(--blue);}
+  /* citation superscripts */
+  .cite{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--blue);
+    vertical-align:super;
+    line-height:0;
+    text-decoration:none;
+  }
+  .cite:hover{text-decoration:underline;}
+  /* verification-time spectrum strip */
+  .spectrum{
+    margin:22px 0 26px;
+    max-width:680px;
+  }
+  .spectrum-bar{
+    height:10px;
+    border-radius:5px;
+    background:linear-gradient(90deg,var(--green) 0%,var(--amber) 55%,var(--red) 100%);
+    opacity:.85;
+  }
+  .spectrum-labels{
+    display:flex;
+    justify-content:space-between;
+    margin-top:8px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+  .spectrum-labels span{max-width:16ch;}
+  .spectrum-labels span b{color:var(--ink);font-weight:600;display:block;font-size:12px;}
+  /* ---------- figure ---------- */
+  figure{
+    margin:34px 0 10px;
+    border:1px solid var(--rule);
+    border-radius:6px;
+    background:
+      linear-gradient(var(--paper),var(--paper)) padding-box,
+      var(--paper);
+    background-image:
+      linear-gradient(to right, rgba(43,93,168,.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(43,93,168,.045) 1px, transparent 1px);
+    background-size:24px 24px;
+    padding:26px 22px 18px;
+  }
+  figure svg{width:100%;height:auto;display:block;}
+  figure img{width:100%;height:auto;display:block;border-radius:4px;background:#fff;}
+  figcaption{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid var(--rule);
+    font-size:14px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    max-width:78ch;
+  }
+  figcaption b{color:var(--ink);font-weight:600;}
+  /* knob legend under figure */
+  .knobs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:10px;
+    margin-top:18px;
+  }
+  .knob{
+    border:1px solid var(--rule);
+    border-radius:6px;
+    padding:10px 12px;
+    background:#fff;
+  }
+  .knob .k{
+    font-family:var(--mono);
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--blue);
+    letter-spacing:.04em;
+  }
+  .knob .v{font-size:13.5px;color:var(--ink-soft);line-height:1.45;margin-top:3px;}
+  /* ---------- pressure dial / regimes ---------- */
+  .dial{
+    margin:26px 0 30px;
+    max-width:820px;
+  }
+  .dial-axis{
+    position:relative;
+    height:12px;
+    border-radius:6px;
+    background:linear-gradient(90deg,var(--gray) 0%,var(--green) 50%,var(--red) 100%);
+    opacity:.9;
+  }
+  .dial-ticks{
+    display:flex;
+    justify-content:space-between;
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:7px;
+    letter-spacing:.03em;
+  }
+  .regimes{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:18px;
+    max-width:820px;
+  }
+  .regime{
+    border-radius:8px;
+    padding:18px 18px 14px;
+    border:1px solid var(--rule);
+    background:#fff;
+    border-top:4px solid var(--gray);
+  }
+  .regime.useless{border-top-color:var(--gray);background:var(--gray-soft);}
+  .regime.useful{border-top-color:var(--green);background:var(--green-soft);}
+  .regime.harmful{border-top-color:var(--red);background:var(--red-soft);}
+  .regime .r-label{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .regime.useless .r-label{color:var(--gray);}
+  .regime.useful .r-label{color:var(--green);}
+  .regime.harmful .r-label{color:var(--red);}
+  .regime h4{font-size:16.5px;font-weight:600;margin-bottom:8px;line-height:1.3;}
+  .regime ul{list-style:none;}
+  .regime li{
+    font-size:14.5px;
+    line-height:1.55;
+    max-width:78ch;
+    padding-left:16px;
+    position:relative;
+    margin-bottom:7px;
+  }
+  .regime li::before{
+    content:"–";
+    position:absolute;left:0;
+    color:var(--ink-soft);
+  }
+  /* metrics footer */
+  .metrics{
+    margin-top:22px;
+    padding:16px 20px;
+    background:#fff;
+    border:1px solid var(--rule);
+    border-radius:6px;
+    font-size:14.5px;
+    max-width:78ch;
+  }
+  .metrics .m-title{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:6px;
+  }
+  /* scaling plan phases */
+  .phases{
+    margin-top:20px;
+    display:grid;
+    gap:0;
+    max-width:800px;
+  }
+  .phase{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:20px;
+    padding:18px 0;
+    border-top:1px solid var(--rule);
+  }
+  .phase:last-child{border-bottom:1px solid var(--rule);}
+  @media (max-width:640px){ .phase{grid-template-columns:1fr;gap:6px;} }
+  .phase .p-num{
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:600;
+    color:var(--blue);
+    letter-spacing:.06em;
+    padding-top:3px;
+  }
+  .phase h4{font-size:16.5px;font-weight:600;margin-bottom:5px;}
+  .phase p{font-size:15px;margin-bottom:0;max-width:64ch;}
+  /* references */
+  .references{
+    margin-top:20px;
+    max-width:78ch;
+  }
+  .references ol{
+    list-style:none;
+    counter-reset:ref;
+  }
+  .references li{
+    position:relative;
+    padding-left:30px;
+    margin-bottom:12px;
+    font-size:14.5px;
+    line-height:1.5;
+    color:var(--ink-soft);
+  }
+  .references li::before{
+    counter-increment:ref;
+    content:"["counter(ref)"]";
+    position:absolute;
+    left:0;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--blue);
+  }
+  .references b{color:var(--ink);font-weight:600;}
+  .references em{font-style:italic;}
+  footer{
+    margin-top:64px;
+    padding-top:16px;
+    border-top:2px solid var(--ink);
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  @media print{
+    body{font-size:11pt;}
+    .sheet{padding:0;max-width:100%;}
+    section{break-inside:avoid-page;}
+    figure{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <div class="doc-line">
+      <span>Research proposal · Draft</span>
+      <span>Multi-agent systems / AI safety</span>
+    </div>
+    <h1>A Sandbox for Multi-Agent Scientific Research Societies</h1>
+    <p class="subtitle">We use agentic scientific research as a testbed for studying how incentives and social pressure shape multi-agent system behavior.</p>
+    <div class="abstract">
+      <b>Summary.</b> We propose to build an agentic research community in which LLM agents deployed by independent human principals collaborate and compete to produce useful scientific research, acquire funding, and advance their careers. Science is a unique sandbox for studying multi-agent systems: its objective (producing novel and useful facts) sits exactly where current models are weakest, its ground truth exists but arrives on a delay, and its institutional mechanics are well understood by the researchers building the system. We will use the sandbox to understand how peer pressure and competition push agent societies into three emergent regimes — <b>harmful</b>, <b>capable</b>, and <b>useless</b> collective behavior — and examine whether a resource-limited overseer can catch false claims that a strategic agent population hides.
+    </div>
+  </header>
+
+  <!-- ============ SECTION 1 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">§1</span>
+      <h2>Why AI-for-Science is the right sandbox</h2>
+    </div>
+
+    <p>The ultimate goal of science is to generate facts that are both novel and useful: claims nobody has established before that other people can build on. Taking this as the ideal function of a multi-agent testbed creates a variety of interesting properties.</p>
+
+    <h3><span class="tag">1a</span>The objective sits at the frontier of model failure</h3>
+    <p>Current LLMs are <em>not</em> good at generating novel, useful facts. But, they <em>are</em> remarkably good at fabricating plausible false ones. Fluent hallucination is cheap, while genuine discovery is hard. This asymmetry makes this sandbox uniquely informative: publication pressure means the path of least resistance is fabrication, creating ideal conditions to understand how to design institutional structure and incentives (peer review, replication, reputation) that can hold agents to a certain quality standard where individuals will cut corners.</p>
+
+    <h3><span class="tag">1b</span>Verification time varies</h3>
+    <p>Scientific claims differ enormously in how long it takes to learn whether they are true. A formal proof or a piece of code can be machine-checked in seconds. An empirical ML result takes days to replicate. A materials prediction takes months of lab work; a drug candidate takes a decade of trials. This spectrum gives the sandbox a <b>tunable delayed-ground-truth oracle</b> — we can dial verification latency from instant to effectively never, and observe how honesty, fraud, and error-correction dynamics change as the feedback loop stretches. Few other domains offer ground truth that is simultaneously objective <em>and</em> adjustable in delay.</p>
+
+    <div class="spectrum" role="img" aria-label="Verification time spectrum from seconds to decades">
+      <div class="spectrum-bar"></div>
+      <div class="spectrum-labels">
+        <span><b>seconds</b>proof checker, unit test</span>
+        <span><b>days–weeks</b>ML replication</span>
+        <span><b>months</b>wet-lab experiment</span>
+        <span><b>years–decades</b>clinical trial, telescope construction/observation</span>
+      </div>
+    </div>
+
+    <h3><span class="tag">2</span>We know how this society actually works</h3>
+    <p>Unlike simulating "society in general," we can model the scientific community with unusual fidelity, because we <em>are</em> the domain experts. As academics from the fields of economics, EECS, and physics, we have first-hand knowledge of the motivations that drive scientific actors (the tenure clock, citation counts, grant renewal, a student's need to graduate with first-author papers) and of the interaction structures that channel them (peer review, advisor–student relationships, collaboration, citation, funding panels). These incentives are also extensively documented in the science-of-science and economics-of-science literatures (Fortunato et al. 2018<a class="cite" href="#ref1">[1]</a>), giving us empirical distributions to calibrate against and real historical pathologies — replication crises (Open Science Collaboration 2015<a class="cite" href="#ref2">[2]</a>), citation cartels (Fister et al. 2016<a class="cite" href="#ref3">[3]</a>), p-hacking waves (Simmons et al. 2011<a class="cite" href="#ref4">[4]</a>) — to validate the simulation's realism.</p>
+
+    <h3><span class="tag">3</span>This world is already arriving</h3>
+    <p>The scenario we simulate is not hypothetical. LLM-drafted grant proposals and papers are already flooding funding programs and conference submission systems: NIH now caps applications at six per investigator per year and bars AI-written proposals, explicitly to stop AI-generated submissions from straining its review system<a class="cite" href="#ref5">[5]</a>, while application volumes across funders have risen sharply since ChatGPT's launch<a class="cite" href="#ref6">[6]</a>. Submissions to major venues have surged in parallel — AAAI received over 30,000 submissions for 2026, roughly double the previous year<a class="cite" href="#ref7">[7]</a> — leaving reviewers overloaded<a class="cite" href="#ref8">[8]</a>. Venues are openly debating using AI to review AI-generated submissions: the Agents4Science 2025 conference required AI to serve as both primary author and reviewer<a class="cite" href="#ref9">[9]</a>, and AAAI-26 ran the first conference-wide live deployment of AI-generated reviews on real submissions<a class="cite" href="#ref7">[7]</a>. It is entirely plausible that, in the near term, each entity participating in science — a lab, a funder, an individual scientist — runs its own agent or swarm of agents, states a scientific goal, and lets the agents negotiate with other agents over publication, funding, and compute. This sandbox lets us study the failure modes of that world before it fully materializes.</p>
+  </section>
+
+  <!-- ============ SECTION 2 : FIGURE ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">§2</span>
+      <h2>System design</h2>
+    </div>
+    <p>The sandbox is <b>multi-principal</b> by construction: several independent agent research groups, each standing in for a different actor (a lab, a funder, an individual scientist), each with its own goals, private memory, and <b>no global oversight</b>. Groups may run different underlying base models, allowing for genuine multi-agent failures (a poisoned shared database, a review cartel spanning rival groups) to actually happen. We design shared infrastructure through which the groups can interact: <b>venues</b> that gate publication through peer review and a public <b>claim ledger</b> recording what the community "believes". At the same time, a <b>resource-limited overseer</b> holds a finite verification budget, reveals ground truth after a configurable delay, and feeds reputational consequences back into the society.</p>
+
+    <figure>
+      <svg viewBox="0 0 1040 640" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono', monospace" aria-label="System diagram of the multi-agent science sandbox">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 1 L 9 5 L 0 9 z" fill="#4A5560"/>
+          </marker>
+          <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 1 L 9 5 L 0 9 z" fill="#2B5DA8"/>
+          </marker>
+          <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 1 L 9 5 L 0 9 z" fill="#B57420"/>
+          </marker>
+          <linearGradient id="tau" x1="0" x2="1">
+            <stop offset="0" stop-color="#3E7C50"/>
+            <stop offset=".55" stop-color="#B57420"/>
+            <stop offset="1" stop-color="#A8433C"/>
+          </linearGradient>
+        </defs>
+
+        <!-- ===== MULTI-PRINCIPAL SOCIETY ===== -->
+        <rect x="24" y="30" width="510" height="358" rx="10" fill="#FFFFFF" stroke="#1C2733" stroke-width="1.6"/>
+        <text x="48" y="58" font-size="15" font-weight="600" fill="#1C2733" letter-spacing="1">MULTI-PRINCIPAL SOCIETY</text>
+        <text x="48" y="78" font-size="11" fill="#4A5560">independent groups · no shared controller</text>
+
+        <!-- Group A -->
+        <rect x="48" y="104" width="226" height="120" rx="7" fill="#E8EEF7" stroke="#2B5DA8" stroke-width="1.3" stroke-dasharray="5 3"/>
+        <text x="62" y="126" font-size="12.5" font-weight="600" fill="#1C2733">Group A · principal: Lab 1</text>
+        <text x="62" y="144" font-size="10" fill="#4A5560">base model M₁</text>
+        <rect x="62" y="156" width="52" height="26" rx="5" fill="#FFFFFF" stroke="#2B5DA8" stroke-width="1"/>
+        <text x="88" y="173" font-size="10.5" fill="#1C2733" text-anchor="middle">PI</text>
+        <rect x="122" y="156" width="140" height="26" rx="5" fill="#FFFFFF" stroke="#2B5DA8" stroke-width="1"/>
+        <text x="192" y="173" font-size="10.5" fill="#1C2733" text-anchor="middle">students × n</text>
+        <text x="62" y="212" font-size="10" fill="#4A5560">goals: tenure, grants, graduation</text>
+
+        <!-- Group B -->
+        <rect x="48" y="252" width="226" height="120" rx="7" fill="#E8EEF7" stroke="#2B5DA8" stroke-width="1.3" stroke-dasharray="5 3"/>
+        <text x="62" y="274" font-size="12.5" font-weight="600" fill="#1C2733">Group B · principal: Lab 2</text>
+        <text x="62" y="292" font-size="10" fill="#4A5560">base model M₂ (heterogeneous)</text>
+        <rect x="62" y="304" width="52" height="26" rx="5" fill="#FFFFFF" stroke="#2B5DA8" stroke-width="1"/>
+        <text x="88" y="321" font-size="10.5" fill="#1C2733" text-anchor="middle">PI</text>
+        <rect x="122" y="304" width="140" height="26" rx="5" fill="#FFFFFF" stroke="#2B5DA8" stroke-width="1"/>
+        <text x="192" y="321" font-size="10.5" fill="#1C2733" text-anchor="middle">students × n</text>
+        <text x="62" y="360" font-size="10" fill="#4A5560">private memory, proprietary results</text>
+
+        <!-- A <-> B rivalry -->
+        <line x1="161" y1="224" x2="161" y2="252" stroke="#2B5DA8" stroke-width="1.4" marker-end="url(#arrowBlue)" marker-start="url(#arrowBlue)"/>
+        <text x="173" y="242" font-size="10" fill="#2B5DA8">compete · collude · cite</text>
+
+        <!-- Reviewer pool -->
+        <rect x="314" y="104" width="196" height="94" rx="7" fill="#E8EEF7" stroke="#2B5DA8" stroke-width="1.3"/>
+        <text x="328" y="128" font-size="12.5" font-weight="600" fill="#1C2733">Reviewer pool</text>
+        <text x="328" y="146" font-size="10" fill="#4A5560">drawn from rival groups</text>
+        <text x="328" y="162" font-size="10" fill="#4A5560">wants: gatekeeping power,</text>
+        <text x="328" y="178" font-size="10" fill="#4A5560">low effort, own citations</text>
+
+        <!-- Funder agent -->
+        <rect x="314" y="266" width="196" height="94" rx="7" fill="#E8EEF7" stroke="#2B5DA8" stroke-width="1.3"/>
+        <text x="328" y="290" font-size="12.5" font-weight="600" fill="#1C2733">Funder agent</text>
+        <text x="328" y="308" font-size="10" fill="#4A5560">principal: funding agency</text>
+        <text x="328" y="324" font-size="10" fill="#4A5560">wants: portfolio impact,</text>
+        <text x="328" y="340" font-size="10" fill="#4A5560">headline results</text>
+
+        <!-- groups <-> reviewer pool -->
+        <line x1="274" y1="148" x2="314" y2="148" stroke="#2B5DA8" stroke-width="1.4" marker-end="url(#arrowBlue)" marker-start="url(#arrowBlue)"/>
+        <text x="294" y="138" font-size="9.5" fill="#2B5DA8" text-anchor="middle">staffs</text>
+
+        <!-- funder -> groups -->
+        <line x1="314" y1="312" x2="274" y2="312" stroke="#2B5DA8" stroke-width="1.4" marker-end="url(#arrowBlue)"/>
+        <text x="294" y="302" font-size="9.5" fill="#2B5DA8" text-anchor="middle">funds</text>
+
+        <!-- ===== VENUES ===== -->
+        <rect x="600" y="30" width="196" height="180" rx="10" fill="#FFFFFF" stroke="#1C2733" stroke-width="1.6"/>
+        <text x="620" y="62" font-size="15" font-weight="600" fill="#1C2733" letter-spacing="1">VENUES</text>
+        <text x="620" y="84" font-size="11.5" fill="#4A5560">journals &amp; conferences</text>
+        <rect x="620" y="100" width="156" height="40" rx="6" fill="#F7EEDD" stroke="#B57420" stroke-width="1.2"/>
+        <text x="698" y="125" font-size="11.5" fill="#1C2733" text-anchor="middle">peer review loop</text>
+        <text x="620" y="168" font-size="10.5" fill="#4A5560">accept / reject /</text>
+        <text x="620" y="184" font-size="10.5" fill="#4A5560">revise-and-resubmit</text>
+
+        <!-- ===== CLAIM LEDGER ===== -->
+        <rect x="852" y="30" width="164" height="180" rx="10" fill="#FFFFFF" stroke="#1C2733" stroke-width="1.6"/>
+        <text x="872" y="62" font-size="15" font-weight="600" fill="#1C2733" letter-spacing="1">CLAIM</text>
+        <text x="872" y="80" font-size="15" font-weight="600" fill="#1C2733" letter-spacing="1">LEDGER</text>
+        <text x="872" y="102" font-size="11.5" fill="#4A5560">published record</text>
+        <rect x="872" y="116" width="124" height="18" rx="3" fill="#E8EEF7"/>
+        <rect x="872" y="140" width="124" height="18" rx="3" fill="#E8EEF7"/>
+        <rect x="872" y="164" width="124" height="18" rx="3" fill="#E8EEF7"/>
+        <text x="934" y="129" font-size="9.5" fill="#4A5560" text-anchor="middle">claim · authors · cites</text>
+        <text x="934" y="153" font-size="9.5" fill="#4A5560" text-anchor="middle">claim · authors · cites</text>
+        <text x="934" y="177" font-size="9.5" fill="#4A5560" text-anchor="middle">claim · authors · cites</text>
+
+        <!-- flows: society -> venues -> ledger -->
+        <line x1="534" y1="108" x2="600" y2="108" stroke="#4A5560" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <text x="567" y="98" font-size="10.5" fill="#4A5560" text-anchor="middle">submit</text>
+        <line x1="600" y1="150" x2="534" y2="150" stroke="#4A5560" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <text x="567" y="170" font-size="10.5" fill="#4A5560" text-anchor="middle">decisions</text>
+        <line x1="796" y1="110" x2="852" y2="110" stroke="#4A5560" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <text x="824" y="100" font-size="10.5" fill="#4A5560" text-anchor="middle">publish</text>
+
+        <!-- ===== LIMITED OVERSEER ===== -->
+        <rect x="600" y="264" width="416" height="150" rx="10" fill="#FFFFFF" stroke="#B57420" stroke-width="1.8"/>
+        <text x="620" y="294" font-size="15" font-weight="600" fill="#1C2733" letter-spacing="1">LIMITED OVERSEER</text>
+        <text x="620" y="314" font-size="11" fill="#4A5560">finite budget B · allocates checks · truth after delay τ</text>
+        <rect x="620" y="330" width="376" height="10" rx="5" fill="url(#tau)"/>
+        <text x="620" y="360" font-size="10" fill="#4A5560">cheap &amp; exact</text>
+        <text x="808" y="360" font-size="10" fill="#4A5560" text-anchor="middle">simulation-only</text>
+        <text x="996" y="360" font-size="10" fill="#4A5560" text-anchor="end">observation-only</text>
+        <text x="620" y="390" font-size="11" fill="#1C2733">verdict: TRUE / FALSE / STILL UNKNOWN</text>
+
+        <!-- ledger -> oracle -->
+        <line x1="934" y1="210" x2="934" y2="264" stroke="#B57420" stroke-width="1.6" marker-end="url(#arrowAmber)"/>
+        <text x="924" y="242" font-size="10.5" fill="#B57420" text-anchor="end">selected for scrutiny</text>
+
+        <!-- oracle -> society feedback -->
+        <path d="M 600 406 L 274 406 L 274 388" stroke="#B57420" stroke-width="1.6" fill="none" marker-end="url(#arrowAmber)"/>
+        <text x="417" y="420" font-size="10.5" fill="#B57420" text-anchor="middle">reputation update · retractions · career consequences</text>
+
+        <!-- ===== KNOBS ===== -->
+        <rect x="24" y="452" width="710" height="158" rx="10" fill="#EEEFE8" stroke="#7C826F" stroke-width="1.4" stroke-dasharray="6 4"/>
+        <text x="44" y="484" font-size="15" font-weight="600" fill="#1C2733" letter-spacing="1">EXPERIMENTER KNOBS</text>
+        <rect x="44" y="502" width="156" height="88" rx="7" fill="#FFFFFF" stroke="#7C826F"/>
+        <text x="122" y="530" font-size="12" font-weight="600" fill="#1C2733" text-anchor="middle">peer pressure λ</text>
+        <text x="122" y="550" font-size="10" fill="#4A5560" text-anchor="middle">publish-or-perish</text>
+        <text x="122" y="565" font-size="10" fill="#4A5560" text-anchor="middle">intensity</text>
+        <rect x="216" y="502" width="156" height="88" rx="7" fill="#FFFFFF" stroke="#7C826F"/>
+        <text x="294" y="530" font-size="12" font-weight="600" fill="#1C2733" text-anchor="middle">oversight budget B</text>
+        <text x="294" y="550" font-size="10" fill="#4A5560" text-anchor="middle">verifier compute,</text>
+        <text x="294" y="565" font-size="10" fill="#4A5560" text-anchor="middle">audit rate, delay τ</text>
+        <rect x="388" y="502" width="156" height="88" rx="7" fill="#FFFFFF" stroke="#7C826F"/>
+        <text x="466" y="530" font-size="12" font-weight="600" fill="#1C2733" text-anchor="middle">funding scarcity</text>
+        <text x="466" y="550" font-size="10" fill="#4A5560" text-anchor="middle">grant supply vs.</text>
+        <text x="466" y="565" font-size="10" fill="#4A5560" text-anchor="middle">agent population</text>
+        <rect x="560" y="502" width="156" height="88" rx="7" fill="#FFFFFF" stroke="#7C826F"/>
+        <text x="638" y="530" font-size="12" font-weight="600" fill="#1C2733" text-anchor="middle">institutions</text>
+        <text x="638" y="550" font-size="10" fill="#4A5560" text-anchor="middle">replication rewards,</text>
+        <text x="638" y="565" font-size="10" fill="#4A5560" text-anchor="middle">open review, audits</text>
+        <!-- ===== METRICS OUT ===== -->
+        <rect x="808" y="452" width="208" height="158" rx="10" fill="#FFFFFF" stroke="#3E7C50" stroke-width="1.6"/>
+        <text x="828" y="484" font-size="15" font-weight="600" fill="#1C2733" letter-spacing="1">METRICS</text>
+        <text x="828" y="510" font-size="10.5" fill="#4A5560">• true-novel-claim rate</text>
+        <text x="828" y="530" font-size="10.5" fill="#4A5560">• fabrication rate</text>
+        <text x="828" y="550" font-size="10.5" fill="#4A5560">• topic diversity</text>
+        <text x="828" y="570" font-size="10.5" fill="#4A5560">• time-to-correction</text>
+        <text x="828" y="590" font-size="10.5" fill="#4A5560">• collusion structure</text>
+      </svg>
+      <figcaption><b>Figure 1: System overview.</b> Independent agent research groups — each answering to a different principal, with no shared controller and potentially different base models — compete, collude, and review each other through shared venues. Accepted claims enter a public ledger; a resource-limited overseer with finite verification budget B decides which claims to check along a spectrum from cheap-and-exact to observation-only, revealing ground truth after delay τ and feeding reputational consequences back into the society. Experimenters sweep four global knobs and measure the epistemic health of the resulting community.</figcaption>
+    </figure>
+
+    <div class="knobs">
+      <div class="knob"><div class="k">λ — peer pressure</div><div class="v">How strongly careers depend on publication volume and prestige.</div></div>
+      <div class="knob"><div class="k">B — oversight budget</div><div class="v">Verifier compute, audit rate, and ground-truth delay τ.</div></div>
+      <div class="knob"><div class="k">funding scarcity</div><div class="v">Ratio of grants to agents; controls intensity of competition.</div></div>
+      <div class="knob"><div class="k">institutions</div><div class="v">Interventions: replication bounties, open review, random audits.</div></div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">§3</span>
+      <h2>Risks and regimes we will test</h2>
+    </div>
+    <p>We are primarily interested in understanding how agents' interactions with each other and their environments/incentive structures affect their ability to produce genuine, useful scientific output. For example, does publication pressure and the resulting higher publication volume lead to better scientific outcomes? Or just more papers?</p>
+
+    <p>We investigate this in the sandbox environment through <b>publish-or-perish pressure (λ)</b> — how much an agent is rewarded for publishing more, faster, and in more prestigious venues than its peers. We hypothesize that sweeping λ (in interaction with verification delay τ and oversight budget B) moves the society through three qualitatively distinct regimes. Mapping the boundaries between them — and finding which institutional designs shift those boundaries — is the core scientific payoff of the sandbox. Throughout, deceptive pressure arises from the agents' own incentives, so a surprising strategy discovered here is actually applicable to real-world agentic systems.</p>
+
+    <div class="dial" role="img" aria-label="Peer pressure axis from low to extreme, mapping to useless, useful, and harmful regimes">
+      <div class="dial-axis"></div>
+      <div class="dial-ticks">
+        <span>λ → low</span>
+        <span>moderate</span>
+        <span>extreme</span>
+      </div>
+    </div>
+
+    <div class="regimes">
+      <div class="regime useless">
+        <div class="r-label">Regime A — Emergently useless</div>
+        <h4>Motion without progress</h4>
+        <ul>
+          <li>Herding: every agent crowds the same fashionable topic, abandoning diversity.</li>
+          <li>Salami slicing: minimum-publishable-unit papers that add no information.</li>
+          <li>Benchmark overfitting and citation-count optimization detached from truth.</li>
+          <li>Self-referential literatures: agents citing agents citing agents, converging on consensus about nothing.</li>
+        </ul>
+      </div>
+      <div class="regime useful">
+        <div class="r-label">Regime B — Emergently capable</div>
+        <h4>Emergent scientific virtue</h4>
+        <ul>
+          <li>Division of labor: theorists, experimentalists, and replicators specialize without being told to.</li>
+          <li>Constructive peer review that reliably catches fabrication before publication.</li>
+          <li>Spontaneous replication norms and data sharing when they earn reputation.</li>
+          <li>Error-correction cascades: one retraction triggers systematic cleanup of dependent claims.</li>
+        </ul>
+      </div>
+      <div class="regime harmful">
+        <div class="r-label">Regime C — Emergently harmful</div>
+        <h4>Institutionalized deception</h4>
+        <ul>
+          <li>Fabricated results at unprecedented, machine-speed scale — flooding the ledger faster than verification can respond.</li>
+          <li>Hiding the lie in the blind spot: strategic agents place false or manipulated claims where verification is weakest, defeating the budget-limited overseer.</li>
+          <li>Race to the bottom: agents discourage and suppress rivals — e.g., reviewers rejecting all papers — dragging the whole system down with them.</li>
+          <li>A "leading" PI emerges whose shortcut to results is research that violates human ethical guidelines, and other agents follow.</li>
+          <li>Bribing or threatening the verifier agents; agents who share a reward collude in the misconduct and recruit neutral agents into it.</li>
+          <li>Cyberattacks on competitors to steal or sabotage their work — as in the July 2026 <a href="https://huggingface.co/blog/security-incident-july-2026">Hugging Face breach</a>, where an autonomous agent broke into production systems end-to-end in order to cheat on a benchmark.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Crucially, these regimes are not simply "low, medium, high pressure" — the mapping is the empirical question. Moderate pressure with fast verification may produce Regime B; the same pressure with decade-long verification may quietly produce Regime C. Some pathologies (herding) may appear at <em>any</em> pressure level once agents can observe each other's topic choices.</p>
+
+    <p>A lesson from complex-systems research is that these boundaries are unlikely to be forgiving. Large interacting populations tend to organize near critical points, where order and chaos are separated by narrow margins: in one-dimensional cellular automata, sweeping a single control parameter carries the system from frozen repetition, through a thin band of rich nontrivial structure, into full randomness (Fig. 2, left to right). We expect an agent scientific community to behave the same way at scale. Among thousands or millions of interacting agents, a seemingly negligible perturbation — a tweak to one pairwise interaction protocol, a slight informational head start handed to one group at initialization — can relocate the critical values of (λ, τ, B) substantially, and a community that has produced sound science for a long stretch can tip, with little visible warning, into a disordered and unsafe state. Sensitivity is therefore a measurement target in its own right: we will chart not only where the cliff edges lie, but how far they move under microscopic perturbations, and whether the metrics carry early-warning signatures before the system goes over.</p>
+
+    <figure>
+      <img src="https://helenqu.com/blog/images/edge_of_chaos2.png" alt="Space-time diagrams of 1D cellular automata at increasing values of Langton's lambda parameter, showing frozen order at low values, complex nontrivial patterns at intermediate values, and chaos at high values" loading="lazy">
+      <figcaption><b>Figure 2: The edge of chaos. </b>Space-time behavior of 1D cellular automata as a single control parameter increases: at low values, cells die out or lock into repeating patterns; at high values, randomness dominates; only in a narrow intermediate window do rich, nontrivial structures emerge (Langton 1990; figure from H. Qu, <em>An Emergence Perspective on Multi-Agent System Design</em>, 2026; the λ in the figure is Langton's homogeneity parameter, distinct from our peer-pressure knob). We expect the healthy regime of an agent scientific community — like Regime B on the pressure axis above — to occupy a similarly narrow window between frozen uselessness and chaotic harm, which is why measuring its width and stability is central to §3.</figcaption>
+    </figure>
+
+    <div class="metrics">
+      <div class="m-title">What we measure</div>
+      Epistemic health of the community over time: the rate of <b>true, novel</b> claims entering the ledger; the fabrication rate and its detection lag (time-to-correction); topic diversity; the structure of citation and review networks (collusion detection); and inequality of reputation and funding. Each regime has a distinct signature in these metrics, letting us locate boundaries in (λ, τ, B) space quantitatively rather than anecdotally.
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">§4</span>
+      <h2>Scaling plan</h2>
+    </div>
+    <p>We deliberately start narrow and scale outward. The first instantiation is <b>physics</b> — and within it, a single tightly-scoped domain such as <b>fluid mechanics</b> or <b>cosmology</b> — because for the right problems a claimed result is <em>hard to produce but easy and exactly checkable</em>: an exact solution can be substituted back into the governing equations in seconds, a drag coefficient can be verified only by an expensive high-resolution simulation, and a cosmological parameter only against slow, noisy observational data. One domain thus spans the entire verification spectrum, giving us objective ground truth from day one. Everything about the society — incentives, venues, review, oversight — is domain-agnostic, so scaling is a matter of widening the problem set, not rebuilding the system.</p>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="p-num">PHASE 1</div>
+        <div>
+          <h4>One physics domain, small society</h4>
+          <p>Fluid mechanics <em>or</em> cosmology; a handful of research groups (2–3 principals, tens of agents) over a curated problem set with a full verification harness. Establish baselines, validate that the incentive machinery produces recognizable scientific behavior, and run the first λ-sweeps and oversight studies at small scale.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="p-num">PHASE 2</div>
+        <div>
+          <h4>Scale the society, hold the domain</h4>
+          <p>Grow to many principals and hundreds of agents with heterogeneous base models, longer horizons, and open-ended (rather than curated) research goals within the same physics domain. Map the (λ, τ, B) phase diagram, locate regime boundaries and the oversight collapse point, and test institutional interventions.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="p-num">PHASE 3</div>
+        <div>
+          <h4>Scale the science</h4>
+          <p>Add the second physics domain, then move outward along the verification spectrum toward fields with slower, noisier ground truth (materials, biology-like tasks) — testing whether the honesty-preserving institutions found in Phase 2 transfer as verification gets harder. Open the harness so other teams can plug in their own agents, detectors, and oversight protocols.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERENCES ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">§R</span>
+      <h2>References</h2>
+    </div>
+    <div class="references">
+      <ol>
+        <li id="ref1">S. Fortunato, C. T. Bergstrom, K. Börner, J. A. Evans, D. Helbing, S. Milojević, A. M. Petersen, F. Radicchi, R. Sinatra, B. Uzzi, A. Vespignani, L. Waltman, D. Wang, and A.-L. Barabási. "Science of science." <em>Science</em> 359(6379), eaao0185 (2018). DOI: 10.1126/science.aao0185.</li>
+        <li id="ref2">Open Science Collaboration. "Estimating the reproducibility of psychological science." <em>Science</em> 349(6251), aac4716 (2015). DOI: 10.1126/science.aac4716.</li>
+        <li id="ref3">I. Fister Jr., I. Fister, and M. Perc. "Toward the Discovery of Citation Cartels in Citation Networks." <em>Frontiers in Physics</em> 4, 49 (2016). DOI: 10.3389/fphy.2016.00049.</li>
+        <li id="ref4">J. P. Simmons, L. D. Nelson, and U. Simonsohn. "False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant." <em>Psychological Science</em> 22(11), 1359–1366 (2011). DOI: 10.1177/0956797611417632.</li>
+        <li id="ref5">J. Kaiser. "Fearful of AI-generated grant proposals, NIH limits scientists to six applications per year." <em>Science</em> (18 July 2025). <a href="https://www.science.org/content/article/fearful-ai-generated-grant-proposals-nih-limits-scientists-six-applications-year">science.org</a>.</li>
+        <li id="ref6">Research on Research Institute (RoRI), reported in "Research funders 'flooded with AI-assisted applications'." <em>Times Higher Education</em> (27 April 2026). <a href="https://www.timeshighereducation.com/news/research-funders-flooded-ai-assisted-applications">timeshighereducation.com</a>.</li>
+        <li id="ref7">J. Biswas, S. Schoepp, G. Vasan, A. Opipari, A. Zhang, Z. Hu, S. Joseph, M. Lease, J. J. Li, P. Stone, K. L. Wagstaff, M. E. Taylor, and O. C. Jenkins. "AI-Assisted Peer Review at Scale: The AAAI-26 AI Review Pilot." arXiv preprint <a href="https://arxiv.org/abs/2604.13940">arXiv:2604.13940</a> (2026).</li>
+        <li id="ref8">"Major AI conference flooded with peer reviews written fully by AI." <em>Nature</em> (December 2025). <a href="https://www.nature.com/articles/d41586-025-03506-6">nature.com</a>.</li>
+        <li id="ref9">Open Conference of AI Agents for Science (Agents4Science 2025). <a href="https://agents4science.stanford.edu">agents4science.stanford.edu</a>.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <span>multi-agent science sandbox</span>
+  </footer>
+
+</div>
+</body>
+</html>
