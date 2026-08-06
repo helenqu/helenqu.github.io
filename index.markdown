@@ -38,10 +38,7 @@ header_includes: "
   <!--   <a href="404.html">CV</a> -->
   <!-- </span> -->
   <span class="marginnote">
-    <a href="https://helenqu.com/blog/posts">AI Blog</a>
-  </span>
-  <span class="marginnote">
-    <a href="https://sphericalcowselectricsheep.substack.com/">Substack</a>
+    <a href="https://helenqu.com/blog/posts">Blog</a>
   </span>
   <span class="marginnote">
     <a href="https://scholar.google.com/citations?user=FWPJDb4AAAAJ&hl=en#">Google Scholar</a>
