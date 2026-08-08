@@ -60,7 +60,7 @@ header_includes: "
 
 I am a research fellow at the [Flatiron Institute](flatiron) broadly interested in reinforcement learning, robustness, multimodal models, and AI for science. Previously, I [completed a PhD in physics][thesis] at the [University of Pennsylvania][pennphysics], where I worked on machine learning methods for type Ia supernova cosmology with [Prof. Masao Sako][masao].
 
-Recently I've been excited about maintaining a [blog](https://helenqu.com/blog/) where I write about fun topics in ML/AI, as well as a personal [Substack](https://sphericalcowselectricsheep.substack.com/) where I write more generally about my thoughts.
+Recently I've been excited about maintaining a [blog](https://helenqu.com/blog/) where I write about fun topics in ML/AI.
 
 [thesis]: https://arxiv.org/abs/2406.04529
 [flatiron]: https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/
@@ -68,6 +68,10 @@ Recently I've been excited about maintaining a [blog](https://helenqu.com/blog/)
 [masao]: https://www.physics.upenn.edu/people/standing-faculty/masao-sako
 
 ## Selected Publications
+[Position: Multi-Agent Alignment is a System Design Problem][multi_agent_alignment]\
+*preprint, 2026*\
+**Helen Qu**
+
 [Impact of Pretraining Word Co-occurrence on Compositional Generalization in Multimodal Models][clip]\
 *preprint, 2025*\
 **Helen Qu**, Sang Michael Xie
@@ -129,6 +133,7 @@ Dillon Brout, Dan Scolnic, Brodie Popovic, ..., **Helen Qu**, et al.
 <!-- *arXiv, 2021*\ -->
 <!-- Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu** -->
 
+[multi_agent_alignment]: /papers/multi_agent_alignment.pdf
 [clip]: https://arxiv.org/abs/2507.08000
 [connect_later]: https://arxiv.org/abs/2402.03325
 [SOP]: https://arxiv.org/abs/2310.16316
