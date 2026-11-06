@@ -58,9 +58,9 @@ header_includes: "
     <img src="photo.jpg" alt="photo of Helen Qu">
 </figure>
 
-I am a research fellow at the [Flatiron Institute](flatiron) broadly interested in reinforcement learning, robustness, multimodal models, and AI for science. Previously, I [completed a PhD in physics][thesis] at the [University of Pennsylvania][pennphysics], where I worked on machine learning methods for type Ia supernova cosmology with [Prof. Masao Sako][masao].
+I am a research fellow at the [Flatiron Institute](flatiron) broadly interested in multi-agent systems, AI safety/alignment, and AI for science. Previously, I [completed a PhD in physics][thesis] at the [University of Pennsylvania][pennphysics], where I worked on machine learning methods for type Ia supernova cosmology with [Prof. Masao Sako][masao].
 
-Recently I've been excited about maintaining a [blog](https://helenqu.com/blog/) where I write about fun topics in ML/AI.
+Recently I've been excited about mechanism design for multi-agent alignment, which I've written about in my [blog](https://helenqu.com/blog/).
 
 [thesis]: https://arxiv.org/abs/2406.04529
 [flatiron]: https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/
@@ -68,13 +68,25 @@ Recently I've been excited about maintaining a [blog](https://helenqu.com/blog/)
 [masao]: https://www.physics.upenn.edu/people/standing-faculty/masao-sako
 
 ## Selected Publications
+[Absorbing State Phase Transitions in Multi-Agent Search][multi_agent_search]\
+*preprint, 2026*\
+Wenwen Zheng, Yuzhe Yang, **Helen Qu**, Xin Eric Wang, Haewon Jeong
+
 [Position: Multi-Agent Alignment is a System Design Problem][multi_agent_alignment]\
 *preprint, 2026*\
 **Helen Qu**
 
+[Representation Learning for Spatiotemporal Physical Systems][jepa]\
+*International Conference on Learning Representations, Workshop on AI & PDE 2026*\
+**Helen Qu**, Rudy Morel, Michael McCabe, Alberto Bietti, François Lanusse, Shirley Ho, Yann LeCun
+
 [Impact of Pretraining Word Co-occurrence on Compositional Generalization in Multimodal Models][clip]\
-*preprint, 2025*\
+*International Conference on Learning Representations, Workshop on Multimodal Intelligence 2026*\
 **Helen Qu**, Sang Michael Xie
+
+[AION-1: Omnimodal Foundation Model for Astronomical Sciences][aion]\
+*Advances in Neural Information Processing Systems, 2025*\
+Liam Parker, Francois Lanusse, Jeff Shen, ..., **Helen Qu**, et al.
 
 [Connect Later: Improving Fine-tuning for Robustness with Targeted Augmentations][connect_later]\
 *International Conference on Machine Learning, 2024*\
@@ -101,21 +113,9 @@ Classification][scone_icml]\
 *Astronomical Journal, 2021*\
 **Helen Qu**, Masao Sako, Anais Möller, Cyrille Doux
 
-[Sum-of-Parts Models: Faithful Attributions for Groups of Features][SOP]\
-*NeurIPS 2023 Workshop on Explainable AI in Action (XAIA)*\
-Weiqiu You, **Helen Qu**, Marco Gatti, Bhuvnesh Jain, Eric Wong
-
 [The Dark Energy Survey: Cosmology Results With~ 1500 New High-redshift Type Ia Supernovae Using The Full 5-year Dataset][des5yr]\
 *Astrophysical Journal, 2024*\
 The Dark Energy Survey Collaboration (incl. **Helen Qu**)
-
-[Transformers for scientific data: a pedagogical review for astronomers][transformers]\
-*arXiv, 2023*\
-Dimitrios Tanoglidis, Bhuvnesh Jain, **Helen Qu**
-
-[What’s the Difference? The Potential for Convolutional Neural Networks for Transient Detection without Template Subtraction][DIA]\
-*Astronomical Journal, 2023*\
-Tatiana Acero-Cuellar, Federica Bianco, Greg Dobler, Masao Sako, **Helen Qu**
 
 [The Pantheon+ Analysis: Cosmological Constraints][pantheon]\
 *Astrophysical Journal, 2022*\
@@ -133,6 +133,7 @@ Dillon Brout, Dan Scolnic, Brodie Popovic, ..., **Helen Qu**, et al.
 <!-- *arXiv, 2021*\ -->
 <!-- Benjamin M. Rose, Greg Aldering, Mi Dai, ..., **Helen Qu** -->
 
+[multi_agent_search]: https://arxiv.org/abs/2609.38327
 [multi_agent_alignment]: /papers/multi_agent_alignment.pdf
 [clip]: https://arxiv.org/abs/2507.08000
 [connect_later]: https://arxiv.org/abs/2402.03325
@@ -149,7 +150,7 @@ Dillon Brout, Dan Scolnic, Brodie Popovic, ..., **Helen Qu**, et al.
 [scone]: https://arxiv.org/abs/2106.04370
 [roman_synergies]: https://arxiv.org/abs/2104.01199
 [DIA]: https://arxiv.org/abs/2203.07390
-
+<!-- 
 ## Selected Talks
 **Enabling Time Domain Science: From CNNs to Foundation Models**\
 Flatiron Institute ML x Astrophysics Symposium (May 2023)
@@ -172,7 +173,7 @@ American Astronomical Society meeting (January 2022)
 [lsst_bdl]: https://www.youtube.com/watch?v=nkPLOgj9m3I&list=PLywBH0_7tBJ9BG2nKodRdn6ReDaW075gM&index=10
 [rising_stars]: https://datascience.uchicago.edu/rising-stars/#description-2
 [roman_2022_youtube]: https://www.youtube.com/watch?v=wJHu0KJfSvU&list=PL460A0YI_JsAVIE-llqdGM7plKF1QbQxk&index=9
-[AAS_2022_youtube]: https://youtu.be/yCS4IMfq9Pk?t=3940
+[AAS_2022_youtube]: https://youtu.be/yCS4IMfq9Pk?t=3940 -->
 
 ## Misc.
 
